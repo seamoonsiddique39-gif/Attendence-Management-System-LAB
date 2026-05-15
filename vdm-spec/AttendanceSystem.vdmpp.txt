@@ -1,0 +1,56 @@
+class AttendanceSystem
+
+types
+
+StudentId = token;
+CourseId = token;
+
+instance variables
+
+students : set of StudentId := {};
+courses : set of CourseId := {};
+attendance : map StudentId to set of CourseId := {|->};
+
+operations
+
+-- Add Student
+AddStudent : StudentId ==> ()
+AddStudent(s) ==
+(
+  students := students union {s}
+)
+pre s not in set students
+post s in set students;
+
+-- Add Course
+AddCourse : CourseId ==> ()
+AddCourse(c) ==
+(
+  courses := courses union {c}
+)
+pre c not in set courses
+post c in set courses;
+
+-- Mark Attendance
+MarkAttendance : StudentId * CourseId ==> ()
+MarkAttendance(s,c) ==
+(
+  if s in set dom attendance
+  then
+    attendance(s) := attendance(s) union {c}
+  else
+    attendance := attendance munion {s |-> {c}}
+)
+pre s in set students and c in set courses
+post c in set attendance(s);
+
+-- Remove Attendance
+RemoveAttendance : StudentId * CourseId ==> ()
+RemoveAttendance(s,c) ==
+(
+  attendance(s) := attendance(s) \ {c}
+)
+pre s in set dom attendance and c in set attendance(s)
+post c not in set attendance(s);
+
+end AttendanceSystem

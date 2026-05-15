@@ -1,0 +1,8 @@
+Requirement Defect Taxonomy Table
+Requirement ID	Requirement Description	Defect Type	Explanation
+FR1	                    User login system	Ambiguity	Login method not defined (email/ID/username)
+FR2	                     Mark attendance	Non-verifiability	Method of marking attendance not specified (manual/biometric/digital)
+FR3	                 Store attendance records	Inconsistency	Storage type not defined (database/file/cloud)
+FR4	               View attendance history	Non-verifiability	Format and access rules not specified
+FR5	                  Manage users (Admin)	Ambiguity	Overlap between admin and teacher permissions
+FR6	          Generate attendance reports	Non-verifiability	Report format, criteria, and filters not defined

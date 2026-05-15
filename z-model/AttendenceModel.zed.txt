@@ -1,0 +1,93 @@
+[STUDENT, COURSE]
+
+AttendanceSystem
+========================
+students   : ℙ STUDENT
+courses    : ℙ COURSE
+attendance : STUDENT ↔ COURSE
+
+where
+
+% Invariant 1
+∀ s : STUDENT; c : COURSE •
+    (s, c) ∈ attendance ⇒
+    s ∈ students ∧ c ∈ courses
+
+% Invariant 2
+attendance ⊆ students × courses
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation 1 — Mark Attendance
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+MarkAttendance
+========================
+Δ AttendanceSystem
+
+s? : STUDENT
+c? : COURSE
+
+where
+
+s? ∈ students
+c? ∈ courses
+
+attendance' = attendance ∪ {(s?, c?)}
+students' = students
+courses' = courses
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation 2 — Remove Attendance
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+RemoveAttendance
+========================
+Δ AttendanceSystem
+
+s? : STUDENT
+c? : COURSE
+
+where
+
+(s?, c?) ∈ attendance
+
+attendance' = attendance \ {(s?, c?)}
+students' = students
+courses' = courses
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation 3 — View Attendance
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ViewAttendance
+========================
+Ξ AttendanceSystem
+
+s? : STUDENT
+result! : ℙ COURSE
+
+where
+
+result! =
+    { c : COURSE | (s?, c) ∈ attendance }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% State Transition Modeling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Before MarkAttendance
+attendance = A
+
+% After MarkAttendance
+attendance' = A ∪ {(s?, c?)}
+
+
+% Before RemoveAttendance
+attendance = A
+
+% After RemoveAttendance
+attendance' = A \ {(s?, c?)}
