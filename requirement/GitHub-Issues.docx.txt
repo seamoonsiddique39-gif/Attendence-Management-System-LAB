@@ -1,0 +1,64 @@
+Issue 1:
+Title: Authentication Method Not Defined
+Description: The login requirement does not specify whether users will authenticate using email, username, or student ID.
+Defect Type: Ambiguity
+Impact: Developers may implement inconsistent authentication methods causing confusion for users.
+Suggested Fix: Clearly define the authentication method and required credentials (email, username, or student ID).
+Priority: Medium
+
+Issue 2:
+Title: Validation Rules Not Defined for User Inputs
+Description: The requirements do not specify validation rules for invalid login attempts or incorrect attendance entries.
+Defect Type: Inconsistency
+Impact: Missing validation may cause inaccurate attendance data and system errors.
+Suggested Fix: Define proper validation rules for all user inputs.
+Priority: Medium
+
+Issue 3:
+
+Title: Report Generation Filters Not Specified
+Description: The requirements do not define filters or criteria for attendance report generation.
+Defect Type: Non-verifiable
+Impact:Developers may implement inconsistent reporting features.
+Suggested Fix: Specify filters such as date range, class, and student selection.
+Priority: Medium
+
+Issue 4:
+Title: Admin and Teacher Permission Conflict
+Description: Both admin and teacher roles appear to have overlapping permissions for managing users and attendance.
+Defect Type: Ambiguity
+Impact: Permission conflicts may cause security and access control problems.
+Suggested Fix: Clearly separate admin and teacher responsibilities.
+Priority: High
+
+Issue 5:
+Title: Attendance History Format Not Specified
+Description: The system does not specify how attendance history should be displayed to students.
+Defect Type: Non-verifiable
+Impact: UI inconsistencies may occur during implementation.
+Suggested Fix: Define format such as table, chart, or report view.
+Priority: Low
+
+Issue 6:
+Title: Attendance Storage Method Not Specified
+Description: The requirements do not define whether attendance records are stored in database, files, or cloud storage.
+Defect Type: Inconsistency
+Impact: Different storage implementations may cause data conflicts.
+Suggested Fix: Specify official storage mechanism (database/cloud/etc.).
+Priority: Medium
+
+Issue 7:
+Title:Attendance Marking Mechanism Not Specified
+Description: The system does not specify whether attendance will be marked manually, digitally, or through biometric verification.
+Defect Type: Non-verifiable
+Impact: Different marking methods may cause inconsistent implementation.
+Suggested Fix: Define exact attendance marking mechanism.
+Priority: High
+
+Isssue 8:
+Title: Login Credentials Type Not Specified
+Description: The login requirement does not specify whether users will authenticate using email, username, or student ID.
+Defect Type: Ambiguity
+Impact: Inconsistent authentication implementation may confuse users.
+Suggested Fix: Clearly define authentication method and required credentials.
+Priority: Medium
